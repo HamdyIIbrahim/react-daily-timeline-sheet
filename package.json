@@ -1,12 +1,13 @@
 {
-  "name": "react-timeline-sheet",
-  "version": "1.0.0",
+  "name": "react-daily-timeline-sheet",
+  "version": "1.2.0",
   "description": "A timeline component for tracking working hours.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "npm run clean && tsc",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc && npm run build:css",
+    "build:css": "postcss src/TimeLine.css -o dist/TimeLine.css",
     "prepublishOnly": "npm run build",
     "prepare": "npm run build"
   },
@@ -17,7 +18,11 @@
   "devDependencies": {
     "typescript": "^5.0.0",
     "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0"
+    "@types/react-dom": "^18.0.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "autoprefixer": "^10.4.14",
+    "rimraf": "^5.0.0"  
   },
   "peerDependencies": {
     "react": "^16.* || ^17.* || ^18.*",
@@ -36,7 +41,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HamdyIIbrahim/react-timeline-sheet"
+    "url": "https://github.com/HamdyIIbrahim/react-daily-timeline-sheet"
   },
-  "homepage": "https://github.com/HamdyIIbrahim/react-timeline-sheet#readme"
+  "homepage": "https://github.com/HamdyIIbrahim/react-daily-timeline-sheet#readme"
 }

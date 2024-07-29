@@ -1,14 +1,14 @@
-# React TimeLine Sheet
+# React Daily TimeLine Sheet
 
-A customizable timeline component for React applications. The `React TimeLine Sheet` component visualizes working and non-working hours in a horizontal timeline, making it ideal for time-tracking apps, schedules, and other applications where time management is key.
+A customizable timeline component for React applications. The `React Daily TimeLine Sheet` component visualizes working and non-working hours in a horizontal timeline, making it ideal for time-tracking apps, schedules, and other applications where time management is key.
 
-### React TimeLine Sheet
+### React Daily TimeLine Sheet
 
 Here are some visual examples of the TimeLine component:
 
-- ![Example 1](./assets/images/1.png)
-- ![Example 2](./assets/images/2.png)
-- ![Example 3](./assets/images/3.png)
+- ![Example 1](./public/assets/images/1.png)
+- ![Example 2](./public/assets/images/2.png)
+- ![Example 3](./public/assets/images/3.png)
 
 ## Features
 
@@ -20,20 +20,20 @@ Here are some visual examples of the TimeLine component:
 
 ## Installation
 
-Install the `React TimeLine Sheet` component via NPM:
+Install the `React Daily TimeLine Sheet` component via NPM:
 
 ```bash
-npm install react-timeline-sheet
+npm install react-daily-timeline-sheet
 ```
 
 ## Usage
 
 Basic Example
-Import and use the React TimeLine Sheet in your React project:
+Import and use the React Daily TimeLine Sheet in your React project:
 
 ```bash
 import React from 'react';
-import TimeLine from 'react-timeline-sheet';
+import TimeLine from 'react-daily-timeline-sheet';
 
 const workingHours = [
   {
@@ -51,12 +51,63 @@ const App = () => {
       <h1>My TimeLine</h1>
       <TimeLine
         workingHours={workingHours}
-        workingColor="#76c7c0"
+      />
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Custom Example
+Import and use the React Daily TimeLine Sheet in your React project:
+
+```bash
+import React from 'react';
+import TimeLine from 'react-daily-timeline-sheet';
+
+const workingHours = [
+  {
+    start: '09:00',
+    end: '17:00',
+    title: 'Work',
+    status: 'InProgress',
+  },
+  // Add more working hours as needed
+];
+
+const renderTooltip = (segment: any) => (
+  <div
+    style={{
+      padding: "5px",
+      backgroundColor: "#4d4d4c",
+      color: "#fff",
+      borderRadius: "3px",
+    }}
+  >
+    <strong>{segment.tooltip}</strong>
+    {segment.status && <div>Status: {segment.status}</div>}
+  </div>
+);
+
+const App = () => {
+  return (
+    <div>
+      <h1>My TimeLine</h1>
+     <TimeLine
+        workingHours={[
+          { start: "09:00", end: "12:00", title: "Morning Shift" },
+          { start: "13:00", end: "17:00", title: "Afternoon Shift" },
+          { start: "18:00", end: "21:00", title: "Evening Shift" },
+        ]}
+        breakpoint="lg"
+        workingColor="#578ff2"
         nonWorkingColor="#e0e0e0"
-        height="40px"
+        height="50px"
         borderRadius="12px"
         timeFormat="12h"
-        notWorkingCaption="Not working at this time"
+        notWorkingCaption="No working hours today"
+        renderTooltip={renderTooltip}
       />
     </div>
   );
@@ -71,7 +122,7 @@ To customize the tooltip displayed for each segment, use the renderTooltip prop:
 
 ```bash
 import React from 'react';
-import TimeLine from 'react-timeline-sheet';
+import TimeLine from 'react-daily-timeline-sheet';
 
 const customTooltip = (segment) => (
   <div>
@@ -129,19 +180,21 @@ export default App;
 
 ## WorkingHour Interface
 
-| Property | Type     | Description                        |
-| -------- | -------- | ---------------------------------- |
-| `start`  | `string` | Start time in HH format.           |
-| `end`    | `string` | End time in HH format.             |
-| `title`  | `string` | Title or description of the shift. |
-| `status` | `string` | (Optional) Status of the shift.    |
+| Property   | Type   | Description                                  |
+|------------|--------|----------------------------------------------|
+| `start`    | `string` | Start time in HH format.                   |
+| `end`      | `string` | End time in HH format.                     |
+| `title`    | `string` | Title or description of the shift.         |
+| `status`   | `string` | (Optional) Status of the shift.            |
 
 ## Segment Interface
 
-| Property       | Type       | Description                               |
-| -------------- | ---------- | ----------------------------------------- | ---------------- |
-| `type`         | `"working" | "non-working"`                            | Type of segment. |
-| `startPercent` | `number`   | Start position as a percentage.           |
-| `widthPercent` | `number`   | Width of the segment as a percentage.     |
-| `tooltip`      | `string`   | Tooltip text to be displayed.             |
-| `status`       | `string`   | (Optional) Status of the working segment. |
+| Property      | Type   | Description                             |
+|---------------|--------|-----------------------------------------|
+| `type`        | `"working" | "non-working"` | Type of segment.                       |
+| `startPercent`| `number` | Start position as a percentage.        |
+| `widthPercent`| `number` | Width of the segment as a percentage.  |
+| `tooltip`     | `string` | Tooltip text to be displayed.          |
+| `status`      | `string` | (Optional) Status of the working segment.|
+
+
