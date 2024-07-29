@@ -18,13 +18,14 @@ Install the `React TimeLine Sheet` component via NPM:
 
 ```bash
 npm install react-timeline-sheet
+```
 
-Usage
+## Usage
+
 Basic Example
 Import and use the React TimeLine Sheet in your React project:
 
-jsx
-Copy code
+```bash
 import React from 'react';
 import TimeLine from 'react-timeline-sheet';
 
@@ -56,11 +57,13 @@ const App = () => {
 };
 
 export default App;
-Custom Tooltips
+```
+
+## Custom Tooltips
+
 To customize the tooltip displayed for each segment, use the renderTooltip prop:
 
-jsx
-Copy code
+```bash
 import React from 'react';
 import TimeLine from 'react-timeline-sheet';
 
@@ -99,70 +102,40 @@ const App = () => {
 };
 
 export default App;
-Props
-The TimeLine component accepts the following props:
 
-Prop	Type	Default	Description
-workingHours	WorkingHour[]	[]	Array of working hours to display. Each object should include start, end, title, and optionally status.
-breakpoint	"md" | "lg"	"lg"	Breakpoint for adjusting interval display (4 hours for "md", 2 hours for "lg").
-workingColor	string	"#76c7c0"	Color for the working hours segments.
-nonWorkingColor	string	"#e0e0e0"	Color for the non-working hours segments.
-height	string	"40px"	Height of the timeline.
-borderRadius	string	"12px"	Border radius of the timeline.
-timeFormat	"12h" | "24h"	"12h"	Time format for displaying hours.
-notWorkingCaption	string	"Not working at this time"	Caption to display when there are no working hours available.
-renderTooltip	(segment: Segment) => React.ReactNode		Custom function to render tooltips for each segment. If not provided, a default tooltip is used.
-WorkingHour Interface
-The workingHours prop expects an array of WorkingHour objects with the following properties:
-
-Property	Type	Description
-start	string	Start time in HH
-format.
-end	string	End time in HH
-format.
-title	string	Title or description of the shift.
-status	string	(Optional) Status of the shift.
-Segment Interface
-The renderTooltip function receives a Segment object with the following properties:
-
-Property	Type	Description
-type	"working" | "non-working"	Type of segment.
-startPercent	number	Start position as a percentage.
-widthPercent	number	Width of the segment as a percentage.
-tooltip	string	Tooltip text to be displayed.
-status	string	(Optional) Status of the working segment.
-Development
-To contribute or develop the TimeLine component, follow these steps:
-
-Clone the Repository:
-
-bash
-Copy code
-git clone <gitlab-repo-url>
-cd react-timeline-sheet
-Install Dependencies:
-
-bash
-Copy code
-npm install
-Build the Package:
-
-bash
-Copy code
-npm run build
-Run Tests:
-
-bash
-Copy code
-npm test
-Publish to NPM:
-
-bash
-Copy code
-npm publish
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request to help improve the TimeLine component.
 ```
+
+## Props
+
+## TimeLine Component Props
+
+| Prop                | Type                                    | Default                      | Description                                                                                                     |
+| ------------------- | --------------------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `workingHours`      | `WorkingHour[]`                         | `[]`                         | Array of working hours to display. Each object should include `start`, `end`, `title`, and optionally `status`. |
+| `breakpoint`        | `"md"                                   | "lg"`                        | `"lg"`                                                                                                          | Breakpoint for adjusting interval display (4 hours for "md", 2 hours for "lg"). |
+| `workingColor`      | `string`                                | `"#76c7c0"`                  | Color for the working hours segments.                                                                           |
+| `nonWorkingColor`   | `string`                                | `"#e0e0e0"`                  | Color for the non-working hours segments.                                                                       |
+| `height`            | `string`                                | `"40px"`                     | Height of the timeline.                                                                                         |
+| `borderRadius`      | `string`                                | `"12px"`                     | Border radius of the timeline.                                                                                  |
+| `timeFormat`        | `"12h"                                  | "24h"`                       | `"12h"`                                                                                                         | Time format for displaying hours.                                               |
+| `notWorkingCaption` | `string`                                | `"Not working at this time"` | Caption to display when there are no working hours available.                                                   |
+| `renderTooltip`     | `(segment: Segment) => React.ReactNode` | -                            | Custom function to render tooltips for each segment. If not provided, a default tooltip is used.                |
+
+## WorkingHour Interface
+
+| Property | Type     | Description                        |
+| -------- | -------- | ---------------------------------- |
+| `start`  | `string` | Start time in HH format.           |
+| `end`    | `string` | End time in HH format.             |
+| `title`  | `string` | Title or description of the shift. |
+| `status` | `string` | (Optional) Status of the shift.    |
+
+## Segment Interface
+
+| Property       | Type       | Description                               |
+| -------------- | ---------- | ----------------------------------------- | ---------------- |
+| `type`         | `"working" | "non-working"`                            | Type of segment. |
+| `startPercent` | `number`   | Start position as a percentage.           |
+| `widthPercent` | `number`   | Width of the segment as a percentage.     |
+| `tooltip`      | `string`   | Tooltip text to be displayed.             |
+| `status`       | `string`   | (Optional) Status of the working segment. |
