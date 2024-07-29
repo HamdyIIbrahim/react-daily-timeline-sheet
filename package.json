@@ -1,0 +1,42 @@
+{
+  "name": "react-timeline-sheet",
+  "version": "1.0.0",
+  "description": "A timeline component for tracking working hours.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.* || ^17.* || ^18.*",
+    "react-dom": "^18.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "keywords": [
+    "timeline",
+    "component",
+    "react"
+  ],
+  "author": "Hamdy Ibrahim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HamdyIIbrahim/react-timeline-sheet"
+  },
+  "homepage": "https://github.com/HamdyIIbrahim/react-timeline-sheet#readme"
+}

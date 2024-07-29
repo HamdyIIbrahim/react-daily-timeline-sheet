@@ -1,0 +1,69 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+/build/
+*.tgz
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/pnpm-lock.yaml
+/pnpm-store/
+package-lock.json
+yarn.lock
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+/coverage/
+
+# Miscellaneous
+*.swp
+*.swo
+*.swn
+
+# Temporary files
+*.tmp
+
+# Next.js cache
+.next/
+
+# TypeScript build output
+*.tsbuildinfo
+
+# NPM
+.npm/
+
+# Jest cache
+/jest-cache/
+
+# Storybook
+/.storybook/
+
+# Build artifacts
+*.d.ts
+
+# Yarn
+.yarn/
+
+# macOS specific files
+*.DS_Store
+
+# Windows specific files
+Thumbs.db
