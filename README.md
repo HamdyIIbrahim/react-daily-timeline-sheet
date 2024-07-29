@@ -2,7 +2,13 @@
 
 A customizable timeline component for React applications. The `React TimeLine Sheet` component visualizes working and non-working hours in a horizontal timeline, making it ideal for time-tracking apps, schedules, and other applications where time management is key.
 
-![React TimeLine Sheet](./assets/timeline-screenshot.png) <!-- Optional: Add a screenshot of your component -->
+### React TimeLine Sheet
+
+Here are some visual examples of the TimeLine component:
+
+- ![Example 1](./assets/images/1.png)
+- ![Example 2](./assets/images/2.png)
+- ![Example 3](./assets/images/3.png)
 
 ## Features
 
@@ -109,17 +115,17 @@ export default App;
 
 ## TimeLine Component Props
 
-| Prop                | Type                                    | Default                      | Description                                                                                                     |
-| ------------------- | --------------------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `workingHours`      | `WorkingHour[]`                         | `[]`                         | Array of working hours to display. Each object should include `start`, `end`, `title`, and optionally `status`. |
-| `breakpoint`        | `"md"                                   | "lg"`                        | `"lg"`                                                                                                          | Breakpoint for adjusting interval display (4 hours for "md", 2 hours for "lg"). |
-| `workingColor`      | `string`                                | `"#76c7c0"`                  | Color for the working hours segments.                                                                           |
-| `nonWorkingColor`   | `string`                                | `"#e0e0e0"`                  | Color for the non-working hours segments.                                                                       |
-| `height`            | `string`                                | `"40px"`                     | Height of the timeline.                                                                                         |
-| `borderRadius`      | `string`                                | `"12px"`                     | Border radius of the timeline.                                                                                  |
-| `timeFormat`        | `"12h"                                  | "24h"`                       | `"12h"`                                                                                                         | Time format for displaying hours.                                               |
-| `notWorkingCaption` | `string`                                | `"Not working at this time"` | Caption to display when there are no working hours available.                                                   |
-| `renderTooltip`     | `(segment: Segment) => React.ReactNode` | -                            | Custom function to render tooltips for each segment. If not provided, a default tooltip is used.                |
+| Prop               | Type                      | Default    | Description                                                    |
+|--------------------|---------------------------|------------|----------------------------------------------------------------|
+| `workingHours`     | `WorkingHour[]`           | `[]`       | Array of working hours to display. Each object should include `start`, `end`, `title`, and optionally `status`. |
+| `breakpoint`       | `"md" | "lg"`             | `"lg"`     | Breakpoint for adjusting interval display (4 hours for "md", 2 hours for "lg"). |
+| `workingColor`     | `string`                  | `"#76c7c0"`| Color for the working hours segments.                         |
+| `nonWorkingColor`  | `string`                  | `"#e0e0e0"`| Color for the non-working hours segments.                     |
+| `height`           | `string`                  | `"40px"`   | Height of the timeline.                                       |
+| `borderRadius`     | `string`                  | `"12px"`   | Border radius of the timeline.                                |
+| `timeFormat`       | `"12h" | "24h"`           | `"12h"`    | Time format for displaying hours.                             |
+| `notWorkingCaption`| `string`                  | `"Not working at this time"` | Caption to display when there are no working hours available. |
+| `renderTooltip`    | `(segment: Segment) => React.ReactNode` | - | Custom function to render tooltips for each segment. If not provided, a default tooltip is used. |
 
 ## WorkingHour Interface
 
