@@ -152,6 +152,7 @@ const TimeLine = ({
               width: `${segment.widthPercent}%`,
               backgroundColor:
                 segment.type === "working" ? workingColor : "transparent",
+                zIndex: segment.type === "working" ? 10 : "auto",
             }}
             data-tooltip={segment.tooltip}
           >
